@@ -12,7 +12,7 @@ const SQL = `
 
     CREATE TABLE IF NOT EXISTS genres (
         id SERIAL PRIMARY KEY,
-        genre VARCHAR( 30 )
+        name VARCHAR( 30 )
     );
 
     CREATE TABLE IF NOT EXISTS movie_genres (
