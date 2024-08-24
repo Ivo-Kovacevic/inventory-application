@@ -1,0 +1,41 @@
+html,
+body {
+  background-color: #201f24;
+  color: #c9c9c9;
+  font-family: "Arial";
+}
+
+.container {
+  margin: 0 5em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  flex-grow: 1;
+}
+
+a {
+  padding: 10px;
+  text-decoration: none;
+  color: #c9c9c9;
+  border-radius: 4px;
+}
+a:hover {
+  background-color: #2d2c31;
+}
+
+.grid {
+  display: grid;
+  grid-template: auto/repeat(5, 1fr);
+}
+
+.movie-layout {
+  display: flex;
+}
+.movie-layout > * {
+  flex-grow: 1;
+}/*# sourceMappingURL=styles.css.map */

@@ -5,6 +5,14 @@ const moviesGet = async (req, res) => {
     res.render("movies", { movies });
 };
 
+const movieGet = async (req, res) => {
+    const movieTitle = decodeURIComponent(req.params.title);
+    const movie = await db.getMovieInfo(movieTitle);
+    console.log(movie);
+    res.render("movie", { movie });
+};
+
 module.exports = {
     moviesGet,
+    movieGet,
 };

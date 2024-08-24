@@ -1,0 +1,44 @@
+@import "./variables";
+
+html,
+body {
+    background-color: $backgroundColor;
+    color: $fontColor;
+    font-family: "Arial";
+}
+
+.container {
+    margin: 0 5em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+        flex-grow: 1;
+    }
+}
+
+a {
+    padding: 10px;
+    text-decoration: none;
+    color: $fontColor;
+    border-radius: 4px;
+    &:hover {
+        background-color: $buttonHover;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template: auto / repeat(5, 1fr);
+}
+
+.movie-layout {
+    display: flex;
+
+    > * {
+        flex-grow: 1;
+    }
+}

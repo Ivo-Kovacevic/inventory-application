@@ -5,6 +5,13 @@ const genresGet = async (req, res) => {
     res.render("genres", { genres });
 };
 
+const genreGet = async (req, res) => {
+    const genreName = decodeURIComponent(req.params.genre);
+    const movieGenre = await db.getMovieGenre(genreName);
+    console.log(movieGenre);
+}
+
 module.exports = {
     genresGet,
+    genreGet,
 };

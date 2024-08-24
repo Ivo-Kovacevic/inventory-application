@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/stylesheets/styles.css" />
+        <title> <%- movie .title %> </title>
+    </head>
+    <body>
+        <div class="container">
+            <%- include('header') %> <% if (locals.movie) { %>
+            <div class="movie-layout">
+                <div class="picture">Image will be here</div>
+                <div class="info">
+                    <h1> <%= movie.title %> </h1>
+                    <p> <%= movie.rating %> </p>
+                    <p> <%= movie.description %> </p>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </body>
+</html>
