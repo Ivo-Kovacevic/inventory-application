@@ -20,7 +20,7 @@ const getMovieInfo = async (movieTitle) => {
 
 const getMovieGenre = async (genreName) => {
     const { rows } = await pool.query(
-        `SELECT movies.title FROM movies
+        `SELECT movies.title, movies.path FROM movies
         INNER JOIN movie_genres ON movies.id = movie_genres.movie_id
         INNER JOIN genres ON genres.id = movie_genres.genre_id
         WHERE genres.name = $1`,

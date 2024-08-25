@@ -7,12 +7,14 @@ const SQL = `
         title VARCHAR(100) NOT NULL,
         release_date DATE,
         rating NUMERIC(3, 1),
-        description VARCHAR(255)
+        description VARCHAR(255),
+        path VARCHAR(100)
     );
 
     CREATE TABLE IF NOT EXISTS genres (
         id SERIAL PRIMARY KEY,
-        name VARCHAR(30)
+        name VARCHAR(30),
+        path VARCHAR(100)
     );
 
     CREATE TABLE IF NOT EXISTS movie_genres (
@@ -21,19 +23,19 @@ const SQL = `
         PRIMARY KEY (movie_id, genre_id)
     );
 
-    INSERT INTO movies (title, release_date, rating, description) VALUES
-        ('Inception', '2010-07-16', 8.8, 'A mind-bending thriller.'),
-        ('The Matrix', '1999-03-31', 8.7, 'A sci-fi classic.'),
-        ('Guardians of the Galaxy', '2014-08-01', 8.0, 'A group of intergalactic criminals must pull together to stop a fanatical warrior.'),
-        ('Pirates of the Caribbean: The Curse of the Black Pearl', '2003-07-09', 8.1, 'Blacksmith teams up with eccentric pirate to save his love.'),
-        ('Superbad', '2007-08-17', 7.6, 'Two high school friends want to make their last days memorable.');
+    INSERT INTO movies (title, release_date, rating, description, path) VALUES
+        ('Inception', '2010-07-16', 8.8, 'A mind-bending thriller.', '/movie-images/inception.jpg'),
+        ('The Matrix', '1999-03-31', 8.7, 'A sci-fi classic.', '/movie-images/the-matrix.jpg'),
+        ('Guardians of the Galaxy', '2014-08-01', 8.0, 'A group of intergalactic criminals must pull together to stop a fanatical warrior.', '/movie-images/guardians-of-the-galaxy.jpg'),
+        ('Pirates of the Caribbean: The Curse of the Black Pearl', '2003-07-09', 8.1, 'Blacksmith teams up with eccentric pirate to save his love.', '/movie-images/pirates-of-the-caribbean.jpg'),
+        ('Superbad', '2007-08-17', 7.6, 'Two high school friends want to make their last days memorable.', '/movie-images/superbad.jpg');
 
-    INSERT INTO genres (name) VALUES
-        ('Sci-Fi'),
-        ('Comedy'),
-        ('Horror'),
-        ('Adventure'),
-        ('Action');
+    INSERT INTO genres (name, path) VALUES
+        ('Sci-Fi', '/genre-images/sci-fi.jpg'),
+        ('Comedy', '/genre-images/comedy.jpg'),
+        ('Horror', '/genre-images/horror.jpg'),
+        ('Adventure', '/genre-images/adventure.jpg'),
+        ('Action', '/genre-images/action.jpg');
 
     INSERT INTO movie_genres (movie_id, genre_id) VALUES
         (
@@ -77,7 +79,6 @@ const SQL = `
             (SELECT id FROM genres WHERE name = 'Comedy')
         );
 `;
-
 
 const main = async function () {
     try {

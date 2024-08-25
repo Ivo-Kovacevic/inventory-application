@@ -1,0 +1,10 @@
+.movie-layout {
+  display: flex;
+  justify-content: space-around;
+}
+.movie-layout > * {
+  flex: 0 0 400px;
+}
+.movie-layout img {
+  max-width: 400px;
+}/*# sourceMappingURL=movie.css.map */

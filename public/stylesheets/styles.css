@@ -1,3 +1,14 @@
+.movie-layout {
+  display: flex;
+  justify-content: space-around;
+}
+.movie-layout > * {
+  flex: 0 0 400px;
+}
+.movie-layout img {
+  max-width: 400px;
+}
+
 html,
 body {
   background-color: #201f24;
@@ -28,14 +39,23 @@ a:hover {
   background-color: #2d2c31;
 }
 
-.grid {
-  display: grid;
-  grid-template: auto/repeat(5, 1fr);
-}
-
-.movie-layout {
+.flex-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.movie-layout > * {
-  flex-grow: 1;
+.flex-container img {
+  max-width: 100%;
+}
+.flex-container .genre,
+.flex-container .movie {
+  flex: 0 0 300px;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 0;
+}
+.flex-container .genre h3,
+.flex-container .movie h3 {
+  margin: auto;
 }/*# sourceMappingURL=styles.css.map */

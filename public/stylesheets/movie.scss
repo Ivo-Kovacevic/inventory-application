@@ -1,0 +1,14 @@
+@import "./variables";
+
+.movie-layout {
+    display: flex;
+    justify-content: space-around;
+
+    > * {
+        flex: 0 0 400px;
+    }
+
+    img {
+        max-width: 400px;
+    }
+}

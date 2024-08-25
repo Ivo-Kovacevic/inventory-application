@@ -10,7 +10,7 @@
         <div class="container">
             <%- include('header') %> <% if (locals.movie) { %>
             <div class="movie-layout">
-                <div class="picture">Image will be here</div>
+                <img src="<%- movie.path %> " alt="">
                 <div class="info">
                     <h1> <%= movie.title %> </h1>
                     <p> <%= movie.rating %> </p>
