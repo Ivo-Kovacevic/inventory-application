@@ -30,12 +30,50 @@ header {
 }
 
 a {
-    padding: 10px;
-    text-decoration: none;
     color: $fontColor;
+    text-decoration: none;
+}
+
+.nav-button {
+    padding: 10px;
     border-radius: 4px;
+
+    transition: 0.1s;
     &:hover {
         background-color: $buttonHover;
+    }
+}
+
+.categories {
+    padding: 10px 0;
+    .category {
+        margin-right: 10px;
+        padding: 10px;
+        border: 1px solid $buttonColor;
+        border-radius: 20px;
+        background-color: $buttonColor;
+
+        transition: 0.1s;
+        &:hover {
+            background-color: $buttonHover;
+            border: 1px solid $mainColor;
+        }
+    }
+}
+
+.watchlist-button {
+    width: 100%;
+    font-size: 2em;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+    color: $fontColor;
+    background-color: $mainColor;
+
+    transition: 0.1s;
+    &:hover {
+        background-color: $mainDarker;
     }
 }
 
@@ -60,4 +98,14 @@ a {
             margin: auto;
         }
     }
+}
+
+.rating {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+path {
+    fill: $fontColor;
 }

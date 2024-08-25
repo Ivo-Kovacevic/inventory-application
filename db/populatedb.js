@@ -5,9 +5,9 @@ const SQL = `
     CREATE TABLE IF NOT EXISTS movies (
         id SERIAL PRIMARY KEY,
         title VARCHAR(100) NOT NULL,
-        release_date DATE,
+        release_year INTEGER,
         rating NUMERIC(3, 1),
-        description VARCHAR(255),
+        description VARCHAR(1000),
         path VARCHAR(100)
     );
 
@@ -23,12 +23,12 @@ const SQL = `
         PRIMARY KEY (movie_id, genre_id)
     );
 
-    INSERT INTO movies (title, release_date, rating, description, path) VALUES
-        ('Inception', '2010-07-16', 8.8, 'A mind-bending thriller.', '/movie-images/inception.jpg'),
-        ('The Matrix', '1999-03-31', 8.7, 'A sci-fi classic.', '/movie-images/the-matrix.jpg'),
-        ('Guardians of the Galaxy', '2014-08-01', 8.0, 'A group of intergalactic criminals must pull together to stop a fanatical warrior.', '/movie-images/guardians-of-the-galaxy.jpg'),
-        ('Pirates of the Caribbean: The Curse of the Black Pearl', '2003-07-09', 8.1, 'Blacksmith teams up with eccentric pirate to save his love.', '/movie-images/pirates-of-the-caribbean.jpg'),
-        ('Superbad', '2007-08-17', 7.6, 'Two high school friends want to make their last days memorable.', '/movie-images/superbad.jpg');
+    INSERT INTO movies (title, release_year, rating, description, path) VALUES
+        ('Inception', '2010', 8.8, 'A thief enters dreams to plant an idea in a target''s mind.', '/movie-images/inception.jpg'),
+        ('The Matrix', '1999', 8.7, 'A hacker discovers the reality he lives in is a simulated illusion.', '/movie-images/the-matrix.jpg'),
+        ('Guardians of the Galaxy', '2014', 8.0, 'A team of space outlaws must save the galaxy from a powerful threat.', '/movie-images/guardians-of-the-galaxy.jpg'),
+        ('Pirates of the Caribbean: The Curse of the Black Pearl', '2003', 8.1, 'A pirate and a blacksmith team up to rescue a kidnapped governor''s daughter.', '/movie-images/pirates-of-the-caribbean.jpg'),
+        ('Superbad', '2007', 7.6, 'Two friends seek to have an unforgettable high school experience with a party.', '/movie-images/superbad.jpg');
 
     INSERT INTO genres (name, path) VALUES
         ('Sci-Fi', '/genre-images/sci-fi.jpg'),

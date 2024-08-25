@@ -7,7 +7,7 @@ const genresGet = async (req, res) => {
 
 const genreGet = async (req, res) => {
     const genreName = decodeURIComponent(req.params.genre);
-    const movies = await db.getMovieGenre(genreName);
+    const movies = await db.getGenre(genreName);
     console.log(movies);
     res.render("genre", { genreName, movies });
 }

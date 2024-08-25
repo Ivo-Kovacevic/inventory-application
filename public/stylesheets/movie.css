@@ -1,6 +1,7 @@
 .movie-layout {
   display: flex;
   justify-content: space-around;
+  padding: 10px;
 }
 .movie-layout > * {
   flex: 0 0 400px;

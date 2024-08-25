@@ -4,18 +4,62 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/stylesheets/styles.css" />
-        <link rel="icon" href="/logo/favicon.ico" type="image/x-icon">
-        <title> <%- movie .title %> </title>
+        <link rel="icon" href="/logo/favicon.ico" type="image/x-icon" />
+        <title><%- movie .title %></title>
     </head>
     <body>
         <div class="container">
             <%- include('header') %> <% if (locals.movie) { %>
             <div class="movie-layout">
-                <img src="<%- movie.path %> " alt="">
+
+                <!-- Left section -->
+                <img src="<%- movie.path %> " alt="" />
+
+                <!-- Right section -->
                 <div class="info">
-                    <h1> <%= movie.title %> </h1>
-                    <p> <%= movie.rating %> </p>
-                    <p> <%= movie.description %> </p>
+
+                    <!-- Movie title -->
+                    <h1><%= movie.title %></h1>
+
+                    <!-- Release year -->
+                    <h3><%= movie.release_year %></h3>
+
+                    <!-- Movie genres -->
+                    <% if (locals.genres) { %>
+                    <div class="categories">
+                        <% genres.forEach(genre => { %>
+                        <a
+                            href="/genres/genre/<%= genre.name %>"
+                            class="category"
+                        >
+                            <%= genre.name %>
+                        </a>
+                        <% }) %>
+                    </div>
+                    <% } %>
+
+                    <!-- Movie rating -->
+                    <div class="rating">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 -960 960 960"
+                        >
+                            <path
+                                d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97zM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149zm247-350"
+                            />
+                        </svg>
+                        <%= movie.rating %>/10
+                    </div>
+
+                    <!-- Movie description -->
+                    <p><%= movie.description %></p>
+
+                    <!-- Watchlist button -->
+                    <form action="/" method="post">
+                        <button class="watchlist-button" type="submit">Add to watchlist</button>
+                    </form>
                 </div>
             </div>
             <% } %>

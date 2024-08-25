@@ -8,8 +8,9 @@ const moviesGet = async (req, res) => {
 const movieGet = async (req, res) => {
     const movieTitle = decodeURIComponent(req.params.title);
     const movie = await db.getMovieInfo(movieTitle);
-    console.log(movie);
-    res.render("movie", { movie });
+    const genres = await db.getMovieGenres(movieTitle);
+    console.log(genres);
+    res.render("movie", { movie, genres });
 };
 
 module.exports = {

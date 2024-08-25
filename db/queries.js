@@ -18,7 +18,7 @@ const getMovieInfo = async (movieTitle) => {
     return movieInfo;
 };
 
-const getMovieGenre = async (genreName) => {
+const getGenre = async (genreName) => {
     const { rows } = await pool.query(
         `SELECT movies.title, movies.path FROM movies
         INNER JOIN movie_genres ON movies.id = movie_genres.movie_id
@@ -29,9 +29,21 @@ const getMovieGenre = async (genreName) => {
     return rows;
 };
 
+const getMovieGenres = async (movieTitle) => {
+    const { rows } = await pool.query(
+        `SELECT genres.name FROM genres
+        INNER JOIN movie_genres ON genres.id = movie_genres.genre_id
+        INNER JOIN movies ON movies.id = movie_genres.movie_id
+        WHERE movies.title = $1`,
+        [movieTitle]
+    );
+    return rows;
+}
+
 module.exports = {
     getAllGenres,
     getAllMovies,
     getMovieInfo,
-    getMovieGenre,
+    getGenre,
+    getMovieGenres,
 };

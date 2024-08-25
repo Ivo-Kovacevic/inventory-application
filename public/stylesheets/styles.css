@@ -1,6 +1,7 @@
 .movie-layout {
   display: flex;
   justify-content: space-around;
+  padding: 10px;
 }
 .movie-layout > * {
   flex: 0 0 400px;
@@ -37,13 +38,48 @@ header .logo img {
 }
 
 a {
-  padding: 10px;
-  text-decoration: none;
   color: #c9c9c9;
-  border-radius: 4px;
+  text-decoration: none;
 }
-a:hover {
+
+.nav-button {
+  padding: 10px;
+  border-radius: 4px;
+  transition: 0.1s;
+}
+.nav-button:hover {
   background-color: #2d2c31;
+}
+
+.categories {
+  padding: 10px 0;
+}
+.categories .category {
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #19181a;
+  border-radius: 20px;
+  background-color: #19181a;
+  transition: 0.1s;
+}
+.categories .category:hover {
+  background-color: #2d2c31;
+  border: 1px solid #a72e2e;
+}
+
+.watchlist-button {
+  width: 100%;
+  font-size: 2em;
+  border: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px;
+  color: #c9c9c9;
+  background-color: #a72e2e;
+  transition: 0.1s;
+}
+.watchlist-button:hover {
+  background-color: #6b1d1d;
 }
 
 .flex-container {
@@ -65,4 +101,14 @@ a:hover {
 .flex-container .genre h3,
 .flex-container .movie h3 {
   margin: auto;
+}
+
+.rating {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+path {
+  fill: #c9c9c9;
 }/*# sourceMappingURL=styles.css.map */
