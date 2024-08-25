@@ -11,8 +11,6 @@
         <div class="container">
             <%- include('header') %>
             <% if (locals.movies) { %>
-                <div class="out">
-
                 <div class="flex-container">
                     <% movies.forEach(movie => { %>
                         <a class="movie" href="/movies/movie/<%- movie.title %>">
@@ -21,8 +19,7 @@
                         </a>
                     <% }) %>
                 </div>
-                </div>
-                <% } %>
+            <% } %>
         </div>
     </body>
 </html>
