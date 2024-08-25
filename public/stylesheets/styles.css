@@ -51,6 +51,11 @@ a {
   background-color: #2d2c31;
 }
 
+.hero-text {
+  text-align: center;
+  padding: 200px;
+}
+
 .categories {
   padding: 10px 0;
 }

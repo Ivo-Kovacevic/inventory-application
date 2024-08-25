@@ -38,7 +38,15 @@ const getMovieGenres = async (movieTitle) => {
         [movieTitle]
     );
     return rows;
-}
+};
+
+const getFiveMovies = async () => {
+    const { rows } = await pool.query(
+        `SELECT movies.title, movies.path FROM movies LIMIT 5`
+    );
+    console.log(rows);
+    return rows;
+};
 
 module.exports = {
     getAllGenres,
@@ -46,4 +54,5 @@ module.exports = {
     getMovieInfo,
     getGenre,
     getMovieGenres,
+    getFiveMovies,
 };
