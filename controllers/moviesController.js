@@ -13,7 +13,12 @@ const movieGet = async (req, res) => {
     res.render("movie", { movie, genres });
 };
 
+const newMovieGet = async (req, res) => {
+    res.render("newMovie");
+};
+
 module.exports = {
     moviesGet,
     movieGet,
+    newMovieGet,
 };

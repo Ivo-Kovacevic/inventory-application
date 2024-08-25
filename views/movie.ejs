@@ -5,19 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/stylesheets/styles.css" />
         <link rel="icon" href="/logo/favicon.ico" type="image/x-icon" />
-        <title><%- movie .title %></title>
+        <title><%- movie.title %></title>
     </head>
     <body>
         <div class="container">
             <%- include('header') %> <% if (locals.movie) { %>
             <div class="movie-layout">
-
                 <!-- Left section -->
                 <img src="<%- movie.path %> " alt="" />
 
                 <!-- Right section -->
                 <div class="info">
-
                     <!-- Movie title -->
                     <h1><%= movie.title %></h1>
 
@@ -58,7 +56,9 @@
 
                     <!-- Watchlist button -->
                     <form action="/" method="post">
-                        <button class="watchlist-button" type="submit">Add to watchlist</button>
+                        <button class="watchlist-button" type="submit">
+                            Add to watchlist
+                        </button>
                     </form>
                 </div>
             </div>

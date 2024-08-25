@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/stylesheets/styles.css" />
+        <link rel="icon" href="/logo/favicon.ico" type="image/x-icon" />
+        <title>Home</title>
+    </head>
+    <body>
+        <div class="container">
+            <%- include('header') %>
+            <form
+                action="/movies/movie/new"
+                method="post"
+                class="new-movie-form"
+            >
+                <label for="title">Movie title</label>
+                <input type="text" name="title" id="title" />
+
+                <label for="year">Release year</label>
+                <input type="text" name="year" id="year" />
+
+                <label for="categories">Categories</label>
+                <input type="text" name="categories" id="categories" />
+
+                <label for="rating">Rating</label>
+                <input type="text" name="rating" id="rating" />
+
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" />
+
+                <button type="submit" class="button-new-movie">Add new movie</button>
+            </form>
+        </div>
+    </body>
+</html>

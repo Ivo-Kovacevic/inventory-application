@@ -72,7 +72,8 @@ a {
   border: 1px solid #a72e2e;
 }
 
-.watchlist-button {
+.watchlist-button,
+.button-new-movie {
   width: 100%;
   font-size: 2em;
   border: 0;
@@ -83,7 +84,8 @@ a {
   background-color: #a72e2e;
   transition: 0.1s;
 }
-.watchlist-button:hover {
+.watchlist-button:hover,
+.button-new-movie:hover {
   background-color: #6b1d1d;
 }
 
@@ -127,4 +129,23 @@ a {
 
 path {
   fill: #c9c9c9;
+}
+
+.new-movie-form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+.new-movie-form input {
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  border-radius: 5px;
+  border: 0;
+  padding: 5px;
+  background-color: #19181b;
+  color: #c9c9c9;
+}
+.new-movie-form input:focus-visible {
+  outline: 2px solid #a72e2e;
 }/*# sourceMappingURL=styles.css.map */
