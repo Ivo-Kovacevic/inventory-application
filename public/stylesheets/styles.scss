@@ -16,8 +16,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h1 {
+    color: $mainColor;
+    .logo {
+        display: flex;
+        align-items: center;
         flex-grow: 1;
+
+        img {
+            max-width: 50px;
+            max-height: 50px;
+        }
     }
 }
 

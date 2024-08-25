@@ -24,9 +24,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #a72e2e;
 }
-header h1 {
+header .logo {
+  display: flex;
+  align-items: center;
   flex-grow: 1;
+}
+header .logo img {
+  max-width: 50px;
+  max-height: 50px;
 }
 
 a {
