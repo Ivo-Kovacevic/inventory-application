@@ -32,6 +32,30 @@
 .movie-layout path {
   fill: #c9c9c9;
 }
+@media (max-width: 1100px) {
+  .movie-layout > * {
+    flex: 0 0 300px;
+  }
+  .movie-layout img {
+    max-width: 300px;
+  }
+}
+@media (max-width: 800px) {
+  .movie-layout > * {
+    flex: 0 0 200px;
+  }
+  .movie-layout img {
+    max-width: 200px;
+  }
+}
+@media (max-width: 600px) {
+  .movie-layout {
+    flex-direction: column;
+  }
+  .movie-layout img {
+    max-width: 100%;
+  }
+}
 
 html,
 body {

@@ -39,4 +39,28 @@
     path {
         fill: $fontColor;
     }
+
+    @media (max-width: 1100px) {
+        > * {
+            flex: 0 0 300px;
+        }
+        img {
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        > * {
+            flex: 0 0 200px;
+        }
+        img {
+            max-width: 200px;
+        }
+    }
+    @media (max-width: 600px) {
+        flex-direction: column;
+        img {
+            max-width: 100%;
+        }
+    }
 }
