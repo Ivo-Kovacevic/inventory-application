@@ -8,4 +8,27 @@
 }
 .movie-layout img {
   max-width: 400px;
+}
+.movie-layout .categories {
+  padding: 10px 0;
+}
+.movie-layout .categories .category {
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #19181a;
+  border-radius: 20px;
+  background-color: #19181a;
+  transition: 0.1s;
+}
+.movie-layout .categories .category:hover {
+  background-color: #2d2c31;
+  border: 1px solid #a72e2e;
+}
+.movie-layout .rating {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.movie-layout path {
+  fill: #c9c9c9;
 }/*# sourceMappingURL=movie.css.map */

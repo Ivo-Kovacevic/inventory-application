@@ -10,6 +10,13 @@ body {
 
 .container {
     margin: 0 5em;
+
+    @media (max-width: 1000px) {
+        margin: 0 2em;
+    }
+    @media (max-width: 700px) {
+        margin: 0 1em;
+    }
 }
 
 header {
@@ -27,6 +34,16 @@ header {
             max-height: 50px;
         }
     }
+
+    .nav-button {
+        padding: 10px;
+        border-radius: 4px;
+
+        transition: 0.1s;
+        &:hover {
+            background-color: $buttonHover;
+        }
+    }
 }
 
 a {
@@ -34,41 +51,15 @@ a {
     text-decoration: none;
 }
 
-.nav-button {
-    padding: 10px;
-    border-radius: 4px;
-
-    transition: 0.1s;
-    &:hover {
-        background-color: $buttonHover;
-    }
-}
-
 .hero-text {
     text-align: center;
     padding: 200px;
 }
 
-.categories {
-    padding: 10px 0;
-    .category {
-        margin-right: 10px;
-        padding: 10px;
-        border: 1px solid $buttonColor;
-        border-radius: 20px;
-        background-color: $buttonColor;
-
-        transition: 0.1s;
-        &:hover {
-            background-color: $buttonHover;
-            border: 1px solid $mainColor;
-        }
-    }
-}
-
 .watchlist-button,
 .button-new-movie {
-    width: 100%;
+    width: max-content;
+    margin: 20px auto;
     font-size: 2em;
     border: 0;
     border-radius: 20px;
@@ -88,6 +79,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: 20px;
 
     img {
         max-width: 100%;
@@ -95,35 +87,34 @@ a {
 
     .genre,
     .movie {
-        flex: 0 0 300px;
+        flex: 0 0 20%;
         box-sizing: border-box;
         margin: 10px;
         padding: 0;
-        background-color: $itemBackground;
+        background-color: $backgroundDarker;
         border: 2px solid $mainColor;
 
         h3 {
             margin: 0.5em;
         }
 
-        transition: 0.1s ease;
         &:hover {
-            box-shadow: 0px 0px 10px 5px #000000;
+            box-shadow: 0px 0px 10px 5px $backgroundDarker;
             img {
                 filter: brightness(50%);
             }
         }
+
+        @media (max-width: 1200px) {
+            flex: 0 0 30%;
+        }
+        @media (max-width: 1000px) {
+            flex: 0 0 40%;
+        }
+        @media (max-width: 800px) {
+            flex: 0 0 45%;
+        }
     }
-}
-
-.rating {
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-}
-
-path {
-    fill: $fontColor;
 }
 
 .new-movie-form {
@@ -137,11 +128,17 @@ path {
         border-radius: 5px;
         border: 0;
         padding: 5px;
-        background-color: $itemBackground;
+        background-color: $backgroundDarker;
         color: $fontColor;
 
         &:focus-visible {
             outline: 2px solid $mainColor;
         }
     }
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
