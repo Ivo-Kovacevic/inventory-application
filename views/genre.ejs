@@ -12,7 +12,7 @@
             <%- include('header') %>
             <% if (locals. genreName && locals.movies) { %>
                 <h2> <%= genreName %> movies</h2>
-                <div class="flex-container">
+                <div class="grid-container">
                     <% movies.forEach(movie => { %>
                         <a class="movie" href="/movies/movie/<%- movie.title %>">
                             <img src="<%= movie.path %>" alt="">

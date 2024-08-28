@@ -14,7 +14,7 @@
 
             <% if (locals.topPicks) { %>
                 <h3>Top picks</h3>
-                <div class="flex-container">
+                <div class="grid-container">
                     <% topPicks.forEach(movie => { %>
                         <a class="movie" href="/movies/movie/<%- movie.title %>">
                             <img src="<%= movie.path %>" alt="">

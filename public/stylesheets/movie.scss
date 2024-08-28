@@ -1,25 +1,15 @@
 @import "./variables";
 
 .movie-layout {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-
-    > * {
-        flex: 0 0 400px;
-    }
-
-    img {
-        max-width: 400px;
-    }
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
     .categories {
         padding: 10px 0;
-        .category {
+        
+        .button {
             margin-right: 10px;
-            padding: 10px;
-            border: 1px solid $buttonColor;
-            border-radius: 20px;
             background-color: $buttonColor;
 
             transition: 0.1s;
@@ -38,29 +28,5 @@
 
     path {
         fill: $fontColor;
-    }
-
-    @media (max-width: 1100px) {
-        > * {
-            flex: 0 0 300px;
-        }
-        img {
-            max-width: 300px;
-        }
-    }
-
-    @media (max-width: 800px) {
-        > * {
-            flex: 0 0 200px;
-        }
-        img {
-            max-width: 200px;
-        }
-    }
-    @media (max-width: 600px) {
-        flex-direction: column;
-        img {
-            max-width: 100%;
-        }
     }
 }

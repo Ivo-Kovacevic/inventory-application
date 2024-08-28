@@ -11,7 +11,7 @@
         <div class="container">
             <%- include('header') %>
             <% if (locals.genres) { %>
-                <div class="flex-container">
+                <div class="grid-container">
                     <% genres.forEach(genre => { %>
                         <a class="genre" href="/genres/genre/<%- genre.name %>">
                             <img src="<%= genre.path %>" alt="">
