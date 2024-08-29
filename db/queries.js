@@ -44,9 +44,34 @@ const getFiveMovies = async () => {
     const { rows } = await pool.query(
         `SELECT movies.title, movies.path FROM movies LIMIT 5`
     );
-    console.log(rows);
     return rows;
 };
+
+const addNewMovie = async (newMovie) => {
+    const title = newMovie.title;
+    const releaseYear = newMovie.year;
+    const rating = parseFloat(newMovie.rating);
+    const description = newMovie.description;
+
+    await pool.query(`INSERT INTO movies (title, release_year, rating, description, path)
+                    VALUES ($1, $2, $3, $4, '/movie-images/inception.jpg')`,
+                    [title, releaseYear, rating, description]
+    );
+
+
+    const genres = newMovie.genres;
+
+    const { rows } = await pool.query(`SELECT id FROM movies WHERE title = $1`, [title]);
+    const movie_id = rows[0].id;
+
+    for (let genre of genres) {
+        let genreResult = await pool.query(`SELECT id FROM genres WHERE name = $1`, [genre]);
+        const genre_id = genreResult.rows[0].id;
+        await pool.query(`INSERT INTO movie_genres (movie_id, genre_id)
+                        VALUES ($1, $2)`,
+                        [movie_id, genre_id]);
+    }
+}
 
 module.exports = {
     getAllGenres,
@@ -55,4 +80,5 @@ module.exports = {
     getGenre,
     getMovieGenres,
     getFiveMovies,
+    addNewMovie,
 };

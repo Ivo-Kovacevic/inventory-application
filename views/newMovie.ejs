@@ -12,7 +12,7 @@
             <%- include('header') %>
             <form
                 action="/movies/movie/new"
-                method="get"
+                method="post"
                 class="new-movie-form"
             >
                 <label for="title">Movie title</label>
@@ -26,7 +26,7 @@
                 <div>
                     <input
                         type="checkbox"
-                        name="genre"
+                        name="genres"
                         id="genre1"
                         value="Action"
                     />
@@ -35,7 +35,7 @@
                 <div>
                     <input
                         type="checkbox"
-                        name="genre"
+                        name="genres"
                         id="genre2"
                         value="Adventure"
                     />
@@ -44,7 +44,7 @@
                 <div>
                     <input
                         type="checkbox"
-                        name="genre"
+                        name="genres"
                         id="genre3"
                         value="Comedy"
                     />
@@ -53,16 +53,16 @@
                 <div>
                     <input
                         type="checkbox"
-                        name="genre"
+                        name="genres"
                         id="genre4"
-                        value="Sci-fi"
+                        value="Sci-Fi"
                     />
-                    <label for="genre4">Sci-fi</label>
+                    <label for="genre4">Sci-Fi</label>
                 </div>
                 <div>
                     <input
                         type="checkbox"
-                        name="genre"
+                        name="genres"
                         id="genre5"
                         value="Horror"
                     />

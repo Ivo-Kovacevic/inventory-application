@@ -3,6 +3,7 @@ const moviesRouter = Router();
 const moviesController = require("../controllers/moviesController");
 
 moviesRouter.get("/movie/new", moviesController.newMovieGet);
+moviesRouter.post("/movie/new", moviesController.newMoviePost);
 moviesRouter.get("/movie/:title", moviesController.movieGet);
 moviesRouter.get("/", moviesController.moviesGet);
 

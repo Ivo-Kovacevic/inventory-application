@@ -13,13 +13,19 @@ const movieGet = async (req, res) => {
 };
 
 const newMovieGet = async (req, res) => {
-    const query = req.query;
-    console.log(query);
     res.render("newMovie");
 };
+
+const newMoviePost = async (req, res) => {
+    const newMovie = req.body;
+    console.log(newMovie);
+    await db.addNewMovie(newMovie);
+    res.redirect(`/movies/movie/${newMovie.title}`);
+}
 
 module.exports = {
     moviesGet,
     movieGet,
     newMovieGet,
+    newMoviePost,
 };
