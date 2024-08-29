@@ -93,8 +93,6 @@ a {
   margin: auto;
   text-align: center;
   padding: 200px 0;
-  width: -moz-min-content;
-  width: min-content;
 }
 
 button,
