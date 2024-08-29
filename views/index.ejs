@@ -16,9 +16,9 @@
                 <h3>Top picks</h3>
                 <div class="grid-container">
                     <% topPicks.forEach(movie => { %>
-                        <a class="movie" href="/movies/movie/<%- movie.title %>">
+                        <a class="movie" href="/movies/movie/<%- movie.name %>">
                             <img src="<%= movie.path %>" alt="">
-                            <h3> <%= movie.title %> </h3>
+                            <h3> <%= movie.name %> </h3>
                         </a>
                     <% }) %>
                 </div>

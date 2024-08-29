@@ -6,9 +6,9 @@ const moviesGet = async (req, res) => {
 };
 
 const movieGet = async (req, res) => {
-    const movieTitle = decodeURIComponent(req.params.title);
-    const movie = await db.getMovieInfo(movieTitle);
-    const genres = await db.getMovieGenres(movieTitle);
+    const movieName = decodeURIComponent(req.params.name);
+    const movie = await db.getMovieInfo(movieName);
+    const genres = await db.getMovieGenres(movieName);
     res.render("movie", { movie, genres });
 };
 
@@ -20,7 +20,7 @@ const newMoviePost = async (req, res) => {
     const newMovie = req.body;
     console.log(newMovie);
     await db.addNewMovie(newMovie);
-    res.redirect(`/movies/movie/${newMovie.title}`);
+    res.redirect(`/movies/movie/${newMovie.name}`);
 }
 
 module.exports = {

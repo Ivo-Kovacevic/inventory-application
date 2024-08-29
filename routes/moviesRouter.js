@@ -4,7 +4,7 @@ const moviesController = require("../controllers/moviesController");
 
 moviesRouter.get("/movie/new", moviesController.newMovieGet);
 moviesRouter.post("/movie/new", moviesController.newMoviePost);
-moviesRouter.get("/movie/:title", moviesController.movieGet);
+moviesRouter.get("/movie/:name", moviesController.movieGet);
 moviesRouter.get("/", moviesController.moviesGet);
 
 module.exports = moviesRouter;

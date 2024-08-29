@@ -4,7 +4,7 @@ require("dotenv").config();
 const SQL = `
     CREATE TABLE IF NOT EXISTS movies (
         id SERIAL PRIMARY KEY,
-        title VARCHAR(100) NOT NULL,
+        name VARCHAR(100) NOT NULL,
         release_year INTEGER,
         rating NUMERIC(3, 1),
         description VARCHAR(1000),
@@ -23,7 +23,7 @@ const SQL = `
         PRIMARY KEY (movie_id, genre_id)
     );
 
-    INSERT INTO movies (title, release_year, rating, description, path) VALUES
+    INSERT INTO movies (name, release_year, rating, description, path) VALUES
         ('Inception', '2010', 8.8, 'A thief enters dreams to plant an idea in a target''s mind.', '/movie-images/inception.jpg'),
         ('The Matrix', '1999', 8.7, 'A hacker discovers the reality he lives in is a simulated illusion.', '/movie-images/the-matrix.jpg'),
         ('Guardians of the Galaxy', '2014', 8.0, 'A team of space outlaws must save the galaxy from a powerful threat.', '/movie-images/guardians-of-the-galaxy.jpg'),
@@ -39,43 +39,43 @@ const SQL = `
 
     INSERT INTO movie_genres (movie_id, genre_id) VALUES
         (
-            (SELECT id FROM movies WHERE title = 'Inception'),
+            (SELECT id FROM movies WHERE name = 'Inception'),
             (SELECT id FROM genres WHERE name = 'Sci-Fi')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'Inception'),
+            (SELECT id FROM movies WHERE name = 'Inception'),
             (SELECT id FROM genres WHERE name = 'Action')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'The Matrix'),
+            (SELECT id FROM movies WHERE name = 'The Matrix'),
             (SELECT id FROM genres WHERE name = 'Sci-Fi')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'The Matrix'),
+            (SELECT id FROM movies WHERE name = 'The Matrix'),
             (SELECT id FROM genres WHERE name = 'Action')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'Guardians of the Galaxy'),
+            (SELECT id FROM movies WHERE name = 'Guardians of the Galaxy'),
             (SELECT id FROM genres WHERE name = 'Sci-Fi')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'Guardians of the Galaxy'),
+            (SELECT id FROM movies WHERE name = 'Guardians of the Galaxy'),
             (SELECT id FROM genres WHERE name = 'Action')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'Guardians of the Galaxy'),
+            (SELECT id FROM movies WHERE name = 'Guardians of the Galaxy'),
             (SELECT id FROM genres WHERE name = 'Comedy')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'Pirates of the Caribbean: The Curse of the Black Pearl'),
+            (SELECT id FROM movies WHERE name = 'Pirates of the Caribbean: The Curse of the Black Pearl'),
             (SELECT id FROM genres WHERE name = 'Adventure')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'Pirates of the Caribbean: The Curse of the Black Pearl'),
+            (SELECT id FROM movies WHERE name = 'Pirates of the Caribbean: The Curse of the Black Pearl'),
             (SELECT id FROM genres WHERE name = 'Action')
         ),
         (
-            (SELECT id FROM movies WHERE title = 'Superbad'),
+            (SELECT id FROM movies WHERE name = 'Superbad'),
             (SELECT id FROM genres WHERE name = 'Comedy')
         );
 `;
