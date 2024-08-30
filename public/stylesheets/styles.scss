@@ -112,11 +112,20 @@ button,
     }
 }
 
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    ul {
+        list-style-type: none;
+        li {
+            padding: 10px;
+        }
+    }
+}
+
 .new-movie-form {
-    margin: auto;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
 
     input,
     textarea {

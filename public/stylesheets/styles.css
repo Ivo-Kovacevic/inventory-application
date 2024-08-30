@@ -138,11 +138,20 @@ button:hover,
   filter: brightness(50%);
 }
 
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.form-container ul {
+  list-style-type: none;
+}
+.form-container ul li {
+  padding: 10px;
+}
+
 .new-movie-form {
-  margin: auto;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
 }
 .new-movie-form input,
 .new-movie-form textarea {
