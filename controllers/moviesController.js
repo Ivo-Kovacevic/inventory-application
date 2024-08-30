@@ -18,11 +18,18 @@ const newMovieGet = async (req, res) => {
     res.render("newMovie");
 };
 
+const genresToArray = (movieInfo) => {
+    if (!Array.isArray(movieInfo.genres)) {
+        movieInfo.genres = [movieInfo.genres];
+    }
+    return movieInfo;
+};
+
 const newMoviePost = [
     validateNewMovie,
     async (req, res) => {
         const errors = validationResult(req);
-        const newMovie = req.body;
+        const newMovie = genresToArray(req.body);
         if (!errors.isEmpty()) {
             return res.status(400).render("newMovie", {
                 inputedMovieForm: newMovie,
