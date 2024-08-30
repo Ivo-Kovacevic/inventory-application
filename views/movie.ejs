@@ -56,10 +56,14 @@
                     <!-- Movie description -->
                     <p><%= movie.description %></p>
 
-                    <!-- Watchlist button -->
                     <a href="./<%=movie.name%>/update" class="button"
                         >Update movie</a
                     >
+                    <a href="./<%=movie.name%>/delete" class="button"
+                        >Delete movie</a
+                    >
+                    
+                    <!-- Watchlist button -->
                     <form action="/" method="post">
                         <button class="watchlist-button" type="submit">
                             Add to watchlist

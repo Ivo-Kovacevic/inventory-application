@@ -113,6 +113,10 @@ const updateMovie = async (movie) => {
     }
 };
 
+const deleteMovie = async (movieName) => {
+    await pool.query(`DELETE FROM movies WHERE name = $1`, [movieName]);
+};
+
 module.exports = {
     getAllGenres,
     getAllMovies,
@@ -122,4 +126,5 @@ module.exports = {
     getFiveMovies,
     addNewMovie,
     updateMovie,
+    deleteMovie,
 };

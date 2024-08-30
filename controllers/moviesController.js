@@ -65,6 +65,12 @@ const updateMoviePost = [
     },
 ];
 
+const deleteMovieGet = async (req, res) => {
+    const movieName = decodeURIComponent(req.params.name);
+    await db.deleteMovie(movieName);
+    res.redirect("/movies");
+}
+
 module.exports = {
     moviesGet,
     movieGet,
@@ -72,4 +78,5 @@ module.exports = {
     newMoviePost,
     updateMovieGet,
     updateMoviePost,
+    deleteMovieGet,
 };
