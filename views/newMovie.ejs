@@ -17,10 +17,21 @@
                     class="new-movie-form"
                 >
                     <label for="name">Movie name</label>
-                    <input type="text" name="name" id="name" required />
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        value="<%= locals.inputedMovieForm && inputedMovieForm.name ? inputedMovieForm.name : '' %>"
+                    />
 
                     <label for="year">Release year</label>
-                    <input type="number" name="year" id="year" required />
+                    <input
+                        type="number"
+                        name="year"
+                        id="year"
+                        value="<%= locals.inputedMovieForm && inputedMovieForm.year ? inputedMovieForm.year : '' %>"
+                        required
+                    />
 
                     <!-- Genres input -->
                     <p>Pick movie genres</p>
@@ -77,15 +88,12 @@
                         name="rating"
                         id="rating"
                         step="0.1"
+                        value="<%= locals.inputedMovieForm && inputedMovieForm.rating ? inputedMovieForm.rating : '' %>"
                         required
                     />
 
                     <label for="description">Description</label>
-                    <textarea
-                        name="description"
-                        id="description"
-                        rows="4"
-                    ></textarea>
+                    <textarea name="description" id="description" rows="4"><%= locals.inputedMovieForm && inputedMovieForm.description ? inputedMovieForm.description : '' %></textarea>
 
                     <button type="submit" class="button-new-movie">
                         Submit

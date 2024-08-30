@@ -22,12 +22,13 @@ const newMoviePost = [
     validateNewMovie,
     async (req, res) => {
         const errors = validationResult(req);
+        const newMovie = req.body;
         if (!errors.isEmpty()) {
             return res.status(400).render("newMovie", {
+                inputedMovieForm: newMovie,
                 errors: errors.array(),
             });
         }
-        const newMovie = req.body;
         console.log(newMovie);
         await db.addNewMovie(newMovie);
         res.redirect(`/movies/movie/${newMovie.name}`);

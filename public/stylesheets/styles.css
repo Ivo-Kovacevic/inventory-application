@@ -152,6 +152,7 @@ button:hover,
 .new-movie-form {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
 .new-movie-form input,
 .new-movie-form textarea {
