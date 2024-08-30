@@ -13,13 +13,13 @@ img {
 }
 
 .container {
-    margin: 0 5em;
+    margin: 20px 5em;
 
     @media (max-width: 1000px) {
-        margin: 0 2em;
+        margin: 20px 2em;
     }
     @media (max-width: 700px) {
-        margin: 0 1em;
+        margin: 20px 1em;
     }
 }
 
@@ -75,7 +75,6 @@ a {
 
 button,
 .button {
-    margin: 20px auto;
     font-size: 1em;
     border: 1px solid $buttonColor;
     border-radius: 20px;
@@ -93,7 +92,7 @@ button,
 .grid-container {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 
     .genre,
     .movie {
@@ -136,6 +135,7 @@ button,
 }
 
 .center {
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     text-align: center;

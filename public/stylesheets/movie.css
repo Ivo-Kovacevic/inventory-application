@@ -4,10 +4,14 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .movie-layout .categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 5px;
   padding: 10px 0;
 }
 .movie-layout .categories .button {
-  margin-right: 10px;
+  margin-right: 0;
   background-color: #19181a;
   transition: 0.1s;
 }
