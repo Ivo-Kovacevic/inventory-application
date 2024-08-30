@@ -149,13 +149,14 @@ button:hover,
   padding: 10px;
 }
 
-.new-movie-form {
+form {
   display: flex;
   flex-direction: column;
   max-width: 600px;
+  margin: 20px 0;
 }
-.new-movie-form input,
-.new-movie-form textarea {
+form input,
+form textarea {
   margin-top: 0.5em;
   margin-bottom: 2em;
   border-radius: 5px;
@@ -164,8 +165,8 @@ button:hover,
   background-color: #121214;
   color: #c9c9c9;
 }
-.new-movie-form input:focus-visible,
-.new-movie-form textarea:focus-visible {
+form input:focus-visible,
+form textarea:focus-visible {
   outline: 2px solid #a72e2e;
 }
 

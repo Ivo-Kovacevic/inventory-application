@@ -36,9 +36,32 @@ const newMoviePost = [
                 errors: errors.array(),
             });
         }
-        console.log(newMovie);
         await db.addNewMovie(newMovie);
         res.redirect(`/movies/movie/${newMovie.name}`);
+    },
+];
+
+const updateMovieGet = async (req, res) => {
+    const movieName = decodeURIComponent(req.params.name);
+    const movie = await db.getMovieInfo(movieName);
+    movie.genres = await db.getMovieGenres(movieName);
+    res.render("updateMovie", { movie });
+};
+
+const updateMoviePost = [
+    validateNewMovie,
+    async (req, res) => {
+        const errors = validationResult(req);
+        const movieForm = genresToArray(req.body);
+        console.log(movieForm);
+        if (!errors.isEmpty()) {
+            return res.status(400).render("updateMovie", {
+                inputedMovieForm: movieForm,
+                errors: errors.array(),
+            });
+        }
+        await db.updateMovie(movieForm);
+        res.redirect(`/movies/movie/${movieForm.name}`);
     },
 ];
 
@@ -47,4 +70,6 @@ module.exports = {
     movieGet,
     newMovieGet,
     newMoviePost,
+    updateMovieGet,
+    updateMoviePost,
 };

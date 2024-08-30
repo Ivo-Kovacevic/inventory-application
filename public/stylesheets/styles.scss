@@ -123,10 +123,11 @@ button,
     }
 }
 
-.new-movie-form {
+form {
     display: flex;
     flex-direction: column;
     max-width: 600px;
+    margin: 20px 0;
 
     input,
     textarea {

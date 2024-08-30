@@ -5,7 +5,7 @@ const SQL = `
     CREATE TABLE IF NOT EXISTS movies (
         id SERIAL PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
-        release_year INTEGER,
+        year INTEGER,
         rating NUMERIC(3, 1),
         description VARCHAR(1000),
         path VARCHAR(100)
@@ -23,11 +23,11 @@ const SQL = `
         PRIMARY KEY (movie_id, genre_id)
     );
 
-    INSERT INTO movies (name, release_year, rating, description, path) VALUES
+    INSERT INTO movies (name, year, rating, description, path) VALUES
         ('Inception', '2010', 8.8, 'A thief enters dreams to plant an idea in a target''s mind.', '/movie-images/inception.jpg'),
         ('The Matrix', '1999', 8.7, 'A hacker discovers the reality he lives in is a simulated illusion.', '/movie-images/the-matrix.jpg'),
         ('Guardians of the Galaxy', '2014', 8.0, 'A team of space outlaws must save the galaxy from a powerful threat.', '/movie-images/guardians-of-the-galaxy.jpg'),
-        ('Pirates of the Caribbean: The Curse of the Black Pearl', '2003', 8.1, 'A pirate and a blacksmith team up to rescue a kidnapped governor''s daughter.', '/movie-images/pirates-of-the-caribbean.jpg'),
+        ('Pirates of the Caribbean The Curse of the Black Pearl', '2003', 8.1, 'A pirate and a blacksmith team up to rescue a kidnapped governor''s daughter.', '/movie-images/pirates-of-the-caribbean.jpg'),
         ('Superbad', '2007', 7.6, 'Two friends seek to have an unforgettable high school experience with a party.', '/movie-images/superbad.jpg');
 
     INSERT INTO genres (name, path) VALUES
@@ -67,11 +67,11 @@ const SQL = `
             (SELECT id FROM genres WHERE name = 'Comedy')
         ),
         (
-            (SELECT id FROM movies WHERE name = 'Pirates of the Caribbean: The Curse of the Black Pearl'),
+            (SELECT id FROM movies WHERE name = 'Pirates of the Caribbean The Curse of the Black Pearl'),
             (SELECT id FROM genres WHERE name = 'Adventure')
         ),
         (
-            (SELECT id FROM movies WHERE name = 'Pirates of the Caribbean: The Curse of the Black Pearl'),
+            (SELECT id FROM movies WHERE name = 'Pirates of the Caribbean The Curse of the Black Pearl'),
             (SELECT id FROM genres WHERE name = 'Action')
         ),
         (

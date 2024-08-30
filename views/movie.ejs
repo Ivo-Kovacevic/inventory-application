@@ -22,7 +22,7 @@
                     <h1><%= movie.name %></h1>
 
                     <!-- Release year -->
-                    <h3><%= movie.release_year %></h3>
+                    <h3><%= movie.year %></h3>
 
                     <!-- Movie genres -->
                     <% if (locals.genres) { %>
@@ -57,6 +57,9 @@
                     <p><%= movie.description %></p>
 
                     <!-- Watchlist button -->
+                    <a href="./<%=movie.name%>/update" class="button"
+                        >Update movie</a
+                    >
                     <form action="/" method="post">
                         <button class="watchlist-button" type="submit">
                             Add to watchlist

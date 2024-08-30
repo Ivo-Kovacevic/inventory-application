@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/stylesheets/styles.css" />
+        <link rel="icon" href="/logo/favicon.ico" type="image/x-icon" />
+        <title>Update movie</title>
+    </head>
+    <body>
+        <div class="container">
+            <%- include('header') %>
+            <div class="form-container">
+                <form <% console.log(locals.movie.name) %>
+                    action="/movies/movie/<%=locals.movie.name%>/update"
+                    method="post" class="new-movie-form" >
+                    <input
+                        type="hidden"
+                        name="id"
+                        value="<%= locals.movie && movie.id ? movie.id : '' %>"
+                    />
+
+                    <label for="name">Movie name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        value="<%= locals.movie && movie.name ? movie.name : '' %>"
+                    />
+
+                    <label for="year">Release year</label>
+                    <input
+                        type="number"
+                        name="year"
+                        id="year"
+                        value="<%= locals.movie && movie.year ? movie.year : '' %>"
+                        required
+                    />
+
+                    <!-- Genres input -->
+                    <p>Pick movie genres</p>
+                    <div>
+                        <input type="checkbox" name="genres" id="genre1"
+                        value="Action" <%= locals.movie &&
+                        movie.genres.find(genre => genre.name === 'Action') ?
+                        'checked' : '' %> />
+                        <label for="genre1">Action</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="genres" id="genre2"
+                        value="Adventure" <%= locals.movie &&
+                        movie.genres.find(genre => genre.name === 'Adventure') ?
+                        'checked' : '' %> />
+                        <label for="genre2">Adventure</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="genres" id="genre3"
+                        value="Comedy" <%= locals.movie &&
+                        movie.genres.find(genre => genre.name === 'Comedy') ?
+                        'checked' : '' %> />
+                        <label for="genre3">Comedy</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="genres" id="genre4"
+                        value="Sci-Fi" <%= locals.movie &&
+                        movie.genres.find(genre => genre.name === 'Sci-Fi') ?
+                        'checked' : '' %> />
+                        <label for="genre4">Sci-Fi</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="genres" id="genre5"
+                        value="Horror" <%= locals.movie &&
+                        movie.genres.find(genre => genre.name === 'Horror') ?
+                        'checked' : '' %> />
+                        <label for="genre5">Horror</label>
+                    </div>
+                    <!-- Checkboxes end -->
+
+                    <label for="rating">Rating</label>
+                    <input
+                        type="number"
+                        name="rating"
+                        id="rating"
+                        step="0.1"
+                        value="<%= locals.movie && movie.rating ? movie.rating : '' %>"
+                        required
+                    />
+
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" rows="4">
+<%= locals.movie && movie.description ? movie.description : '' %></textarea
+                    >
+
+                    <button type="submit" class="button-new-movie">
+                        Submit
+                    </button>
+                </form>
+                <%- include('partials/errors') %>
+            </div>
+        </div>
+    </body>
+</html>
